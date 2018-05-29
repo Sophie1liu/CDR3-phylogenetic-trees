@@ -1,0 +1,9 @@
+
+MS	 <-read.csv("MS.csv", TRUE,",")
+library("seqRFLP")
+names <- MS$code
+sequences<- MS$cdr3nt
+df <- data.frame(names,sequences)
+df.fasta = dataframe2fas(df, file="MS.fasta")
+#用mega 做alignment 
+#再用https://www.ebi.ac.uk/Tools/phylogeny/simple_phylogeny/zuo做树文件。
